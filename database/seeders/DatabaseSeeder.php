@@ -16,12 +16,12 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::factory(10)->create()->each(function ($user) {
-            Item::factory(3)
+            Item::factory(4)
                 ->for($user)
                 ->create()
                 ->each(function ($item) {
-                    Check::factory(2)->for($item)->create();
-                    Media::factory(4)->for($item)->create();
+                    Check::factory(6)->for($item)->create();
+                    Media::factory(7)->for($item)->create();
                 });
         });
     }
